@@ -13,8 +13,8 @@ class WallServiceTest {
         val likes = Likes()
         val post = Post(3, "31.10.21", "text33", true, "NEauthor", true, true, false, likes)
 
-        service.add(post)
-        assertEquals(1, service.posts.last().id)
+        val result = service.add(post)
+        assertEquals(1, result.id)
     }
 
     @Test

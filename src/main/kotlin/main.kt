@@ -21,7 +21,7 @@ data class Post(
 )
 
 class WallService {
-    internal var posts = emptyArray<Post>()
+    private var posts = emptyArray<Post>()
     private var unicId = 1
 
     fun add(post: Post): Post {
