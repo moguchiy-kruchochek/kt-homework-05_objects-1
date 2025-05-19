@@ -21,11 +21,11 @@ class WallServiceTest {
     fun updateExistingWithTrueResult() {
         val service = WallService()
         val likes = Likes()
-        service.add(Post(0, "11.11.20", "text51", true, "authorr", true, false, true, likes))
-        service.add(Post(0, "23.12.21", "super text", false, "corp", false, true, false, likes))
-        service.add(Post(0, "03.03.25", "important", false, "mine", true, false, false, likes))
+        service.add(Post(0, "11.11.20", "text51", true, "authorr", true, false, null, likes))
+        service.add(Post(0, "23.12.21", "super text", false, "corp", null, true, false, likes))
+        service.add(Post(0, "03.03.25", "important", null, "mine", true, false, false, likes))
 
-        val update = Post(3, "03.04.25", "IMPORTANT!", false, "me", true, false, false, likes)
+        val update = Post(3, "03.04.25", "IMPORTANT!", null, "me", null, null, null, likes)
         val result = service.update(update)
 
         assertTrue("The Post updated!", result)
@@ -39,7 +39,7 @@ class WallServiceTest {
         service.add(Post(0, "23.12.21", "super text", false, "corp", false, true, false, likes))
         service.add(Post(0, "03.03.25", "important", false, "mine", true, false, false, likes))
 
-        val update = Post(6, "03.04.25", "IMPORTANT!", false, "me", true, false, false, likes)
+        val update = Post(6, "03.04.25", "IMPORTANT!", null, "me", null, null, null, likes)
         val result = service.update(update)
 
         assertFalse("No Posts with such ID :(", result)
