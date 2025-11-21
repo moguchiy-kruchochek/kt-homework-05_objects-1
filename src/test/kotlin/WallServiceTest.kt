@@ -1,7 +1,9 @@
 import org.junit.Test
 
 import org.junit.Assert.*
-import ru.netology.*
+import ru.netology.Likes
+import ru.netology.Post
+import ru.netology.WallService
 
 class WallServiceTest {
 
