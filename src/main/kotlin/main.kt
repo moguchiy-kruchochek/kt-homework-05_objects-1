@@ -12,11 +12,11 @@ data class Post(
     val id: Int = 0,
     val date: String,
     val text: String,
-    val friendsOnly: Boolean,
+    val friendsOnly: Boolean?,
     val copyright: String,
-    val isPinned: Boolean,
-    val isFavorite: Boolean,
-    val marksAsAds: Boolean,
+    val isPinned: Boolean?,
+    val isFavorite: Boolean?,
+    val marksAsAds: Boolean?,
     val likes: Likes
 )
 
@@ -47,7 +47,8 @@ class WallService {
 fun main() {
     val service = WallService()
     val likes = Likes()
-    val post = Post(0, "11.11.11", "text", true, "author", true, true, false, likes)
+    val post = Post(0, "11.11.11", "text", friendsOnly = null, "author", isPinned = null, isFavorite = null, marksAsAds = null, likes)
     service.add(post)
     service.update(Post(1, "03.04.25", "Important text", false, "me", true, false, false, likes))
+
 }
